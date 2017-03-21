@@ -2,5 +2,5 @@
     <h1 class="home">Built for developers</h1>
     <h4 class="home">GitCloned is a development platform inspired by the way Git works.
       Host code, manage projects, and build software alongside millions of other developers and see less of it here.</h4>
-    <%= link_to "Login", "http://github.com/login/oauth/authorize?client_id=919138390dcec0da95d3&scope=repo", class: "btn" %>
+    <%= link_to "Login", "http://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=repo", class: "btn" %>
 </div>

@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    client_id     = '919138390dcec0da95d3'
-    client_secret = '370627700c5ef6cda3a90463e6a536315de748f7'
-
+    client_id     = ENV["GITHUB_CLIENT_ID"]
+    client_secret = ENV["GITHUB_SECRET_KEY"]
+    
     @response = Faraday.post("https://github.com/login/oauth/access_token?client_id=#{client_id}&client_secret=#{client_secret}&code=#{params[:code]}")
     access_token = @response.body.split(/\W+/)[1]
 
