@@ -1,0 +1,30 @@
+<div class="page-wrap">
+  <div class="container" id="container">
+    <div class="auth-now">
+      <%= image_tag("Octocat/Octocat.png", class: "login") %>
+      <section class="card-container">
+        <div class="c-card c-card--center">
+          <h1 class="home">Sign in to GitCloned</h1>
+          <%= link_to "Login through GitHub", "http://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}", class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer" role="contentinfo">
+  <div class="site-footer footer-links">
+    <ul>
+      <li><h3>Terms</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Privacy</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Security</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Contact GitCloned</h3></li>
+    </ul>
+  </div>
+</footer>
+</div>
