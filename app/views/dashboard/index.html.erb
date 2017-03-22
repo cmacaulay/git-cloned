@@ -1,1 +1,7 @@
-<h1>Welcome <%= current_user.username %> </h1>
+<section class="dashboard">
+  <h1>Welcome <%= current_user.username %> </h1>
+  <%= image_tag current_user.avatar, class: "user-avatar" %>
+  <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
+  <p>Followers: <%= current_user.followers %></p>
+  <p>Following: <%= current_user.following %></p>
+</section>
