@@ -7,15 +7,22 @@ class User < ApplicationRecord
   # end
 
   def starred_repos
-    parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
+    # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
+    parse(Faraday.get("https://api.github.com/#{self[:username]}/starred?token=#{self.token}"))
   end
 
   def followers
-   parse(Faraday.get("https://api.github.com/users/#{self[:username]}/followers"))
+    client_id     = ENV["GITHUB_CLIENT_ID"]
+    client_secret = ENV["GITHUB_SECRET_KEY"]
+    auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
+   parse(Faraday.get("https://api.github.com/users/#{self[:username]}/followers#{auth}"))
   end
-  
+
   def following
-  parse(Faraday.get("https://api.github.com/users/#{self[:username]}/following"))
+    client_id     = ENV["GITHUB_CLIENT_ID"]
+    client_secret = ENV["GITHUB_SECRET_KEY"]
+    auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
+    parse(Faraday.get("https://api.github.com/users/#{self[:username]}/following#{auth}"))
   end
 
   private
