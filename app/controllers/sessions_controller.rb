@@ -14,9 +14,6 @@ class SessionsController < ApplicationController
     user.name       = auth["name"]
     user.uid        = auth["id"]
     user.avatar     = auth["avatar_url"]
-    user.starred    = auth["starred_url"]
-    user.followers  = auth["followers_url"]
-    user.following  = auth["following_url"]
     user.token      = access_token
     user.save
 
@@ -25,6 +22,6 @@ class SessionsController < ApplicationController
       redirect_to dashboard_index_path
     else
       redirect_to root_path
-    end 
+    end
   end
 end

@@ -6,9 +6,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :token
       t.string :avatar
-      t.string :starred
-      t.string :followers
-      t.string :following
       t.string :provider
 
       t.timestamps

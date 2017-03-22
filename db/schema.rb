@@ -21,9 +21,6 @@ ActiveRecord::Schema.define(version: 20170321214020) do
     t.string   "name"
     t.string   "token"
     t.string   "avatar"
-    t.string   "starred"
-    t.string   "followers"
-    t.string   "following"
     t.string   "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
