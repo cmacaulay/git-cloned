@@ -1,6 +1,28 @@
-<div class="container">
-    <h1 class="home">Built for developers</h1>
-    <h4 class="home">GitCloned is a development platform inspired by the way Git works.
-      Host code, manage projects, and build software alongside millions of other developers and see less of it here.</h4>
-    <%= link_to "Login", "http://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=repo", class: "btn" %>
+<div class="page-wrap">
+  <div class="container" id="container">
+    <div class="auth-now">
+      <%= image_tag("femalecodercat.jpg", class: "login") %>
+      <div class="card">
+      <h1 class="home">Sign in to GitCloned</h1>
+      <%= button_to "Login through GitHub", "http://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=repo", method: :get %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<footer class="footer" role="contentinfo">
+  <div class="site-footer footer-links">
+    <ul>
+      <li><h3>Terms</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Privacy</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Security</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Contact GitCloned</h3></li>
+    </ul>
+  </div>
+</footer>

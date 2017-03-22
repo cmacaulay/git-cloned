@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails_12factor', group: :production
 gem 'faraday'
 gem 'figaro'
+gem 'bourbon'
+gem 'bitters'
+gem 'neat'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
