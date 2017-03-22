@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  attr_reader :username#:service
-  #
-  # def initialize
-  #   # @service ||= GithubService.new
-  #   @username = self.username
-  # end
+  attr_reader :username, :service
+
+  def self.service(user)
+    @service = GithubService.new(user)
+  end
 
   def starred_repos
+    service.starred_repos(self)
     # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
     parse(Faraday.get("https://api.github.com/#{self[:username]}/starred?token=#{self.token}"))
   end
@@ -63,7 +63,6 @@ class User < ApplicationRecord
       return parse(Faraday.get("https://api.github.com/users/#{f[:login]}/events#{auth}"))
     end
   end
-
 
   private
 
