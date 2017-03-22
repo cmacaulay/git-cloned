@@ -7,7 +7,15 @@ class User < ApplicationRecord
   # end
 
   def starred_repos
-    response = parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
+    parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
+  end
+
+  def followers
+   parse(Faraday.get("https://api.github.com/users/#{self[:username]}/followers"))
+  end
+  
+  def following
+  parse(Faraday.get("https://api.github.com/users/#{self[:username]}/following"))
   end
 
   private
