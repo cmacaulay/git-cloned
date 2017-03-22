@@ -12,7 +12,6 @@
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
-  background: $footer-background;
   width: 100%;
 
 
@@ -23,9 +22,9 @@
   }
 
   ul {
-    flex-basis: 13em;
+    flex-basis: 7em;
     flex-shrink: 0;
-    margin-bottom: $base-spacing * 2;
+    margin-bottom: $base-spacing;
     padding: 0;
   }
 
@@ -46,9 +45,10 @@
   }
 
   li h3 {
-    color: $footer-color;
-    font-size: 1em;
+    color: $white;
+    font-size: 12px;
     margin-bottom: 0.4em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
 
@@ -70,7 +70,4 @@ html, body {
 }
 .site-footer, .page-wrap:after {
   height: 50px;
-}
-.site-footer {
-  background: orange;
 }

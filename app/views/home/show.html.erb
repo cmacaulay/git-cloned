@@ -1,14 +1,15 @@
 <div class="page-wrap">
   <div class="container" id="container">
     <div class="auth-now">
-      <%= image_tag("femalecodercat.jpg", class: "login") %>
-      <div class="card">
-      <h1 class="home">Sign in to GitCloned</h1>
-      <%= button_to "Login through GitHub", "http://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=repo", method: :get %>
+      <%= image_tag("Octocat/Octocat.png", class: "login") %>
+      <section class="card-container">
+        <div class="c-card c-card--center">
+          <h1 class="home">Sign in to GitCloned</h1>
+          <%= link_to "Login through GitHub", "http://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}", class: "button" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <footer class="footer" role="contentinfo">
   <div class="site-footer footer-links">
@@ -26,3 +27,4 @@
     </ul>
   </div>
 </footer>
+</div>
