@@ -25,6 +25,13 @@ class User < ApplicationRecord
     parse(Faraday.get("https://api.github.com/users/#{self[:username]}/following#{auth}"))
   end
 
+  def repos
+    client_id     = ENV["GITHUB_CLIENT_ID"]
+    client_secret = ENV["GITHUB_SECRET_KEY"]
+    auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
+    parse(Faraday.get("https://api.github.com/users/#{self[:username]}/repos#{auth}"))
+  end
+
   private
 
   def parse(response)
