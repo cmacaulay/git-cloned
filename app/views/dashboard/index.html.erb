@@ -1,9 +1,11 @@
 <section class="dashboard">
   <h1>Welcome <%= current_user.username %> </h1>
   <%= image_tag current_user.avatar, class: "user-avatar" %>
+  <p>Activity of those followed: <%= current_user.activity_of_followed %></p>
   <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
   <p>Followers: <%= current_user.followers %></p>
   <p>Following: <%= current_user.following %></p>
-  <p>Organizations: <%= current_user.organizations %>
-  <p>Repos: <%= current_user.repos %>
+  <p>Events: <%= current_user.activity %></p>
+  <p>Organizations: <%= current_user.organizations %></p>
+  <p>Repos: <%= current_user.repos %></p>
 </section>
