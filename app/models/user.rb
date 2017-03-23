@@ -1,21 +1,32 @@
 class User < ApplicationRecord
-  attr_reader :username#:service
-  #
-  # def initialize
-  #   # @service ||= GithubService.new
-  #   @username = self.username
-  # end
+  attr_reader :username, :service
 
   def starred_repos
-    parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
+    Repo.find_starred(self)
   end
 
   def followers
-   parse(Faraday.get("https://api.github.com/users/#{self[:username]}/followers"))
+    Follower.find_followers(self)
   end
-  
+
   def following
-  parse(Faraday.get("https://api.github.com/users/#{self[:username]}/following"))
+    Following.find_following(self)
+  end
+
+  def repos
+    Repo.find_repos(self)
+  end
+
+  def organizations
+    Organization.find_organizations(self)
+  end
+
+  def activity
+    Activity.find_activity(self)
+  end
+
+  def activity_of_followed
+    Activity.find_activity_of_followed(self, self.following)
   end
 
   private

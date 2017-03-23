@@ -16,5 +16,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Ignore cassettes
+/spec/cassettes
+
 # Ignore application configuration
 /config/application.yml
