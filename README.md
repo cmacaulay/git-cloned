@@ -1,4 +1,7 @@
-# README
+# ![GitCloned](https://octodex.github.com/images/femalecodertocat.png)
+
+A `slightly` less functional clone of GitHub. 
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
