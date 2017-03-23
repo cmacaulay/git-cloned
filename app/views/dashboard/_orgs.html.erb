@@ -1,0 +1,6 @@
+<p>Organizations: </p>
+<ul>
+  <% current_user.organizations.each do |org| %>
+    <li><%= org.login %><li>
+  <% end %>
+</ul>

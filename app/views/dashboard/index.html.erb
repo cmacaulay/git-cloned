@@ -4,81 +4,15 @@
   <hr>
   <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
   <hr>
-
-  <p>Followers: </p>
-  <ul>
-  <% current_user.follower_details.each do |follower| %>
-    <li><%= image_tag follower.avatar_url, class: "user-avatar" %></li>
-    <li><%= link_to follower.login, follower.html_url, class: "user-link" %></li>
-    <li><%= link_to follower.name, follower.html_url, class: "user-link" %></li>
-    <li><%= follower.bio %></li>
-    <li><%= follower.location %></li>
-    <li><%= follower.company %></li>
-  <% end %>
-</ul>
-<hr>
-
-<p>Following:</p>
-<ul>
-<% current_user.following_details.each do |follower| %>
-  <li><%= image_tag follower.avatar_url, class: "user-avatar" %></li>
-  <li><%= link_to follower.login, follower.html_url, class: "user-link" %></li>
-  <li><%= link_to follower.name, follower.html_url, class: "user-link" %></li>
-  <li><%= follower.bio %></li>
-  <li><%= follower.location %></li>
-  <li><%= follower.company %></li>
-<% end %>
-
-</ul>
-<hr>
-
-  <p>Organizations: </p>
-  <ul>
-    <% current_user.organizations.each do |org| %>
-      <li><%= org.login %><li>
-    <% end %>
-  </ul>
+  <%= render partial: 'followers' %>
   <hr>
-
-  <p>Repos: </p>
-  <ul>
-    <% current_user.repo_details.each do |repo| %>
-      <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
-      <li><%= repo.description  %></li>
-      <li><%= repo.language  %></li>
-      <% if repo.fork %>
-        <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-<hr>
-<p>Commits:</p>
-<ul>
-  <% current_user.commits_by_repo.each do |repo| %>
-    <% if repo.keys.first %>
-    <li>Repo: <%= repo.keys.first %></li>
-    <% end %>
-    <ul>
-    <% repo.values.each do |commit| %>
-      <li>Author: <%= commit[:author][:name] %></li>
-      <li>Message: <%= commit[:message] %></li>
-    <% end %>
-    </ul>
-  <% end %>
-</ul>
-<hr>
-  <p>Commits of followed users: </p>
-  <ul>
-    <% current_user.commits_by_repo_of_followed.each do |repo| %>
-      <% if repo.keys.first %>
-      <li>Repo: <%= repo.keys.first %></li>
-      <% end %>
-      <ul>
-      <% repo.values.each do |commit| %>
-        <li>Author: <%= commit[:author][:name] %></li>
-        <li>Message: <%= commit[:message] %></li>
-      <% end %>
-      </ul>
-    <% end %>
-  </ul>
+  <%= render partial: 'following' %>
+  <hr>
+  <%= render partial: 'orgs' %>
+  <hr>
+  <%= render partial: 'repos' %>
+  <hr>
+  <%= render partial: 'commits' %>
+  <hr>
+  <%= render partial: 'follower_commits' %>
 </section>
