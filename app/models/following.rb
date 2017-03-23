@@ -5,7 +5,7 @@ class Following < OpenStruct
     @service ||= GithubService.new(user)
   end
 
-  def self.find_followers(user)
+  def self.find_following(user)
     service(user).following(user).map do |repo|
       Follower.new(repo)
     end

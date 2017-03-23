@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
 
   def following
-    Following.find_followers(self)
+    Following.find_following(self)
   end
 
   def repos
