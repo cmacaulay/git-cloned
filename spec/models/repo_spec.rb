@@ -1,21 +1,19 @@
 require 'rails_helper'
 
-describe GithubService do
-  attr_reader :service, :user
-
+describe Repo do
+  attr_reader :user
   before(:each) do
     @user   = User.create!({username: "cmacaulay",
                        token: ENV['USER_TOKEN']
                      })
   end
 
-  describe '#starred_repos' do
-    it 'finds all starred repos' do
+  describe "#find_starred_repos" do
+    it "finds all of the user's starred repos" do
       VCR.use_cassette("#starred_repos") do
         starred_repos = user.starred_repos
         starred_repo  = starred_repos.first
 
-        expect(starred_repos).to be_an(Array)
         expect(starred_repos.count).to eq(3)
 
         expect(starred_repo[:name]).to eq("rails_engine")

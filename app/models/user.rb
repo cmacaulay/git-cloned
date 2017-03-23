@@ -1,14 +1,11 @@
 class User < ApplicationRecord
   attr_reader :username, :service
 
-  def self.service(user)
-    @service = GithubService.new(user)
-  end
 
   def starred_repos
-    service.starred_repos(self)
+    Repo.find_starred(self)
+    # service.starred_repos(self)
     # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
-    parse(Faraday.get("https://api.github.com/#{self[:username]}/starred?token=#{self.token}"))
   end
 
   def followers
