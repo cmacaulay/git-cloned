@@ -52,6 +52,21 @@
     <% end %>
   </ul>
 <hr>
+<p>Commits:</p>
+<ul>
+  <% current_user.commits_by_repo.each do |repo| %>
+    <% if repo.keys.first %>
+    <li>Repo: <%= repo.keys.first %></li>
+    <% end %>
+    <ul>
+    <% repo.values.each do |commit| %>
+      <li>Author: <%= commit[:author][:name] %></li>
+      <li>Message: <%= commit[:message] %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</ul>
+
 <p>Events: <%= current_user.activity %></p>
 <hr>
   <p>Activity of those followed: <%= current_user.activity_of_followed %></p>

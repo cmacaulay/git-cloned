@@ -45,6 +45,13 @@ class GithubService
     parse(connection.get("users/#{user[:username]}/events"))
   end
 
+  def commits(user, activity)
+    activity.map do |a|
+      if a.type == "PushEvent"
+      end 
+    end
+  end
+
   def activity_of_followed(user, followed)
     followed.each do |f|
       return parse(connection.get("users/#{f[:login]}/events"))
