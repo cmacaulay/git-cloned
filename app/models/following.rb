@@ -10,4 +10,5 @@ class Following < OpenStruct
       Follower.new(f)
     end
   end
+
 end

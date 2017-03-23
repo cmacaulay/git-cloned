@@ -10,4 +10,10 @@ class Activity < OpenStruct
       Activity.new(f)
     end
   end
+
+  def self.find_activity_of_followed(user, followed)
+    service(user).activity_of_followed(user, followed).map do |f|
+      Activity.new(f)
+    end
+  end
 end

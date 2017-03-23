@@ -23,20 +23,10 @@ class User < ApplicationRecord
 
   def activity
     Activity.find_activity(self)
-    # client_id     = ENV["GITHUB_CLIENT_ID"]
-    # client_secret = ENV["GITHUB_SECRET_KEY"]
-    # auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
-    # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/events#{auth}"))
   end
 
   def activity_of_followed
-    client_id     = ENV["GITHUB_CLIENT_ID"]
-    client_secret = ENV["GITHUB_SECRET_KEY"]
-    auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
-    # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/received_events#{auth}"))
-    self.following.each do |f|
-      return parse(Faraday.get("https://api.github.com/users/#{f[:login]}/events#{auth}"))
-    end
+    Activity.find_activity_of_followed(self, self.following)
   end
 
   private

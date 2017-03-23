@@ -7,11 +7,6 @@ class GithubService
       faraday.params[:client_secret] = ENV["GITHUB_SECRET_KEY"]
       faraday.adapter  Faraday.default_adapter
     end
-    # @token  = user.token
-    # @connection = Faraday.new("https://api.github.com") do |faraday|
-    #   faraday.params[:access_token] = user.token
-    #   faraday.adapter  Faraday.default_adapter
-    # end
   end
 
   def starred_repos(user)
@@ -36,6 +31,12 @@ class GithubService
 
   def activity(user)
     parse(connection.get("users/#{user[:username]}/events"))
+  end
+
+  def activity_of_followed(user, followed)
+    followed.each do |f|
+      return parse(connection.get("users/#{f[:login]}/events"))
+    end
   end
 
   private
