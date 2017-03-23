@@ -11,7 +11,7 @@ class Activity < OpenStruct
     end
   end
 
-  def self.find_commits(user, activity)
+  def self.find_commits(activity)
     activity.map do |activity|
       by_repo = {}
       if activity.type == "PushEvent"
