@@ -17,12 +17,24 @@ class GithubService
     parse(connection.get("users/#{user[:username]}/followers"))
   end
 
+  def user_details(user, users)
+    users.map do |follower|
+       parse(connection.get("users/#{follower[:login]}"))
+    end
+  end
+
   def following(user)
     parse(connection.get("users/#{user[:username]}/following"))
   end
 
   def repos(user)
     parse(connection.get("users/#{user[:username]}/repos"))
+  end
+
+  def repo_details(user, repos)
+    repos.map do |repo|
+      response = parse(connection.get("repos/#{repo[:full_name]}"))
+    end
   end
 
   def organizations(user)

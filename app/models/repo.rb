@@ -16,4 +16,5 @@ class Repo < OpenStruct
       Repo.new(repo)
     end
   end
+
 end
