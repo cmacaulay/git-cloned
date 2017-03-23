@@ -21,4 +21,20 @@ describe Repo do
       end
     end
   end
+
+  describe "#repos" do
+    it "finds all repos that belong to user" do
+      VCR.use_cassette("#repos") do
+        repos = Repo.find_repos(user)
+        repo  = repos.first
+
+        expect(repos).to be_an(Array)
+        expect(repos.count).to eq(30)
+
+        expect(repo[:id]).to eq(78127608)
+        expect(repo[:name]).to eq("advanced-enums")
+        expect(repo[:full_name]).to eq("cmacaulay/advanced-enums")
+      end
+    end
+  end
 end
