@@ -11,7 +11,7 @@ describe Repo do
   describe "#find_starred_repos" do
     it "finds all of the user's starred repos" do
       VCR.use_cassette("#starred_repos") do
-        starred_repos = user.starred_repos
+        starred_repos = Repo.find_starred(user)
         starred_repo  = starred_repos.first
 
         expect(starred_repos.count).to eq(3)

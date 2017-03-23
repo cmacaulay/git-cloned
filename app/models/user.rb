@@ -4,15 +4,14 @@ class User < ApplicationRecord
 
   def starred_repos
     Repo.find_starred(self)
-    # service.starred_repos(self)
-    # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/starred"))
   end
 
   def followers
-    client_id     = ENV["GITHUB_CLIENT_ID"]
-    client_secret = ENV["GITHUB_SECRET_KEY"]
-    auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
-   parse(Faraday.get("https://api.github.com/users/#{self[:username]}/followers#{auth}"))
+    Follower.find_followers(self)
+  #   client_id     = ENV["GITHUB_CLIENT_ID"]
+  #   client_secret = ENV["GITHUB_SECRET_KEY"]
+  #   auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
+  #  parse(Faraday.get("https://api.github.com/users/#{self[:username]}/followers#{auth}"))
   end
 
   def following
