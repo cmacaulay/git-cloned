@@ -1,7 +1,10 @@
 <section class="dashboard">
   <h1>Welcome <%= current_user.username %> </h1>
   <%= image_tag current_user.avatar, class: "user-avatar" %>
+  <hr>
   <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
+  <hr>
+
   <p>Followers: </p>
   <ul>
   <% current_user.follower_details.each do |follower| %>
@@ -13,6 +16,7 @@
     <li><%= follower.company %></li>
   <% end %>
 </ul>
+<hr>
 
 <p>Following:</p>
 <ul>
@@ -26,24 +30,29 @@
 <% end %>
 
 </ul>
+<hr>
+
   <p>Organizations: </p>
   <ul>
     <% current_user.organizations.each do |org| %>
       <li><%= org.login %><li>
     <% end %>
   </ul>
+  <hr>
 
   <p>Repos: </p>
   <ul>
-    <%= current_user.repo_details.each do |repo| %>
+    <% current_user.repo_details.each do |repo| %>
       <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
       <li><%= repo.description  %></li>
       <li><%= repo.language  %></li>
       <% if repo.fork %>
-        
+        <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
       <% end %>
     <% end %>
   </ul>
+<hr>
+<p>Events: <%= current_user.activity %></p>
+<hr>
   <p>Activity of those followed: <%= current_user.activity_of_followed %></p>
-  <p>Events: <%= current_user.activity %></p>
 </section>
