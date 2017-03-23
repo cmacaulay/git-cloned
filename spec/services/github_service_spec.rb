@@ -37,4 +37,19 @@ describe GithubService do
       end
     end
   end
+
+  describe "#following" do
+    it "finds all users who are following a user" do
+      VCR.use_cassette("#following") do
+        followers = user.following
+        follower  = followers.first
+
+        expect(followers).to be_an(Array)
+        expect(followers.count).to eq(3)
+
+        expect(follower[:login]).to eq("novohispano")
+        expect(follower[:id]).to eq(1654034)
+      end
+    end
+  end
 end
