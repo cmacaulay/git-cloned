@@ -4,15 +4,16 @@ describe GithubService do
   attr_reader :service, :user
 
   before(:each) do
-    @user   = User.create!({username: "cmacaulay",
+    @user    = User.create!({username: "cmacaulay",
                        token: ENV['USER_TOKEN']
                      })
+    @service = GithubService.new(user)
   end
 
   describe '#starred_repos' do
     it 'finds all starred repos' do
       VCR.use_cassette("#starred_repos") do
-        starred_repos = user.starred_repos
+        starred_repos = service.starred_repos(user)
         starred_repo  = starred_repos.first
 
         expect(starred_repos).to be_an(Array)
@@ -27,7 +28,7 @@ describe GithubService do
   describe "#followers" do
     it "finds all users who follow a user" do
       VCR.use_cassette("#followers") do
-        followers = user.followers
+        followers = service.followers(user)
         follower  = followers.first
 
         expect(followers).to be_an(Array)
@@ -41,7 +42,7 @@ describe GithubService do
   describe "#following" do
     it "finds all users who are following a user" do
       VCR.use_cassette("#following") do
-        followers = user.following
+        followers = service.following(user)
         follower  = followers.first
 
         expect(followers).to be_an(Array)
@@ -56,7 +57,7 @@ describe GithubService do
   describe "#repos" do
     it "finds all repos that belong to user" do
       VCR.use_cassette("#repos") do
-        repos = user.repos
+        repos = service.repos(user)
         repo  = repos.first
 
         expect(repos).to be_an(Array)
@@ -70,12 +71,23 @@ describe GithubService do
   end
 
   describe "#organizations" do
-    it "finds all organizations a user belogns to" do
+    it "finds all organizations a user belongs to" do
       VCR.use_cassette("#organizations") do
-        organizations = user.organizations
+        organizations = service.organizations(user)
 
         expect(organizations).to be_an(Array)
         expect(organizations.count).to eq(0)
+      end
+    end
+  end
+
+  describe "#activity" do
+    it "finds all user activity" do
+      VCR.use_cassette("#activity") do
+        activity = service.activity(user)
+
+        expect(activity).to be_an(Array)
+        expect(activity.count).to eq(30)
       end
     end
   end

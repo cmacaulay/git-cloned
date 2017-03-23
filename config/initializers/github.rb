@@ -34,6 +34,10 @@ class GithubService
     parse(connection.get("users/#{user[:username]}/orgs"))
   end
 
+  def activity(user)
+    parse(connection.get("users/#{user[:username]}/events"))
+  end
+
   private
 
   def parse(response)
