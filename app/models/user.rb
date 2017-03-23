@@ -48,8 +48,16 @@ class User < ApplicationRecord
     Activity.find_activity(self)
   end
 
+  def commits_by_repo
+    Activity.find_commits(self.activity)
+  end
+
   def activity_of_followed
     Activity.find_activity_of_followed(self, self.following)
+  end
+
+  def commits_by_repo_of_followed
+    Activity.find_commits(self.activity_of_followed)
   end
 
   private
