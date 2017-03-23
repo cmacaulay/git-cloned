@@ -10,4 +10,10 @@ class Repo < OpenStruct
       Repo.new(repo)
     end
   end
+
+  def self.find_repos(user)
+    service(user).repos(user).map do |repo|
+      Repo.new(repo)
+    end
+  end
 end
