@@ -6,8 +6,8 @@ class Following < OpenStruct
   end
 
   def self.find_following(user)
-    service(user).following(user).map do |repo|
-      Follower.new(repo)
+    service(user).following(user).map do |f|
+      Follower.new(f)
     end
   end
 end

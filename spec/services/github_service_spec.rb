@@ -68,4 +68,15 @@ describe GithubService do
       end
     end
   end
+
+  describe "#organizations" do
+    it "finds all organizations a user belogns to" do
+      VCR.use_cassette("#organizations") do
+        organizations = user.organizations
+
+        expect(organizations).to be_an(Array)
+        expect(organizations.count).to eq(0)
+      end
+    end
+  end
 end

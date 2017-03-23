@@ -16,24 +16,10 @@ class User < ApplicationRecord
 
   def repos
     Repo.find_repos(self)
-    # client_id     = ENV["GITHUB_CLIENT_ID"]
-    # client_secret = ENV["GITHUB_SECRET_KEY"]
-    # auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
-    # parse(Faraday.get("https://api.github.com/users/#{self[:username]}/repos#{auth}"))
   end
 
   def organizations
-    # connection = Faraday.new(url: "https://api.github.com") do |faraday|
-    #   faraday.params[:access_token] = self.token
-    # end
-    # response = connection.get "#{User.find_by(token: self.token)}/orgs"
-    # # try = parse(response.body)
-    # byebug
-
-    client_id     = ENV["GITHUB_CLIENT_ID"]
-    client_secret = ENV["GITHUB_SECRET_KEY"]
-    auth          = "?client_id=#{client_id}&client_secret=#{client_secret}"
-    parse(Faraday.get("https://api.github.com/users/#{self[:username]}/orgs#{auth}"))
+    Organization.find_organizations(self)
   end
 
 
