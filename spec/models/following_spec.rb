@@ -21,5 +21,6 @@ describe Following do
         expect(follower[:id]).to eq(1654034)
       end
     end
-    end
+  end
+
 end
