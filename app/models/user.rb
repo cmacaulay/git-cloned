@@ -1,6 +1,17 @@
 class User < ApplicationRecord
   attr_reader :username, :service
 
+  def self.from_github(auth, access_token)
+    user = User.find_or_create_by(uid: auth["id"], provider: 'github')
+      user.username   = auth["login"]
+      user.name       = auth["name"]
+      user.uid        = auth["id"]
+      user.avatar     = auth["avatar_url"]
+      user.token      = access_token
+      user.save
+      user
+  end
+
   def followers
     Follower.find_followers(self)
   end
