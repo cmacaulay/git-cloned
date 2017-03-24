@@ -4,6 +4,7 @@
     <div class="nav-wrapper">
       <div class="container">
         <%= image_tag "Octocat/Octocat.png", class: "brand"%>
+
       </div>
     </div>
   </nav>
@@ -57,14 +58,20 @@
           <div class="col s9">
           <h1>Starred Repos</h1>
           <ul>
+            <div class="row">
             <% current_user.starred_repos.each do |repo| %>
-              <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
-              <li><%= repo.description  %></li>
-              <li><%= repo.language  %></li>
-              <% if repo.fork %>
-                <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
-              <% end %>
+              <div class="col s6">
+                <div class="card-panel">
+                <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
+                <li><%= repo.description  %></li>
+                <li><%= repo.language  %></li>
+                <% if repo.fork %>
+                  <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
+                <% end %>
+              </div>
+            </div>
             <% end %>
+          </div>
           </ul>
         </div>
         </div>
