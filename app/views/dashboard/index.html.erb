@@ -24,7 +24,7 @@
 			<label for="tab4"></i><span>Following (<%= current_user.following.count %>)</span></label>
 
 			<input id="tab5" type="radio" name="tabs">
-			<label for="tab5"></label>
+			<label for="tab5"><span>Commits</span></label>
 
 			<section id="content1" class="tab-content">
         <div class="row">
@@ -41,8 +41,6 @@
           </div>
 
         </div>
-
-        <%= render partial: 'commits' %>
 
 			</section>
 
@@ -102,6 +100,22 @@
           <div class="col s9">
             <%= render partial: 'following' %>
             <%= render partial: 'following_commits' %>
+          </div>
+        </div>
+      </section>
+
+      <section id="content5" class="tab-content">
+        <div class="row">
+
+          <div class="col s3">
+            <h1><%= current_user.name %></h1>
+            <h2><%= current_user[:username] %> </h2>
+            <%= image_tag current_user.avatar, class: "user-avatar" %>
+            <p>Organizations: </p>
+            <%= render partial: 'orgs' %>
+          </div>
+          <div class="col s9">
+            <%= render partial: 'commits' %>
           </div>
         </div>
       </section>
