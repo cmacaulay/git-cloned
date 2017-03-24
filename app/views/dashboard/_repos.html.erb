@@ -1,11 +1,17 @@
 <p>Repos: </p>
 <ul>
+  <div class="row">
   <% current_user.repo_details.each do |repo| %>
-    <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
-    <li><%= repo.description  %></li>
-    <li><%= repo.language  %></li>
-    <% if repo.fork %>
-      <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
-    <% end %>
+      <div class="col s6">
+        <div class="card-panel">
+          <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
+          <li><%= repo.description  %></li>
+          <li><%= repo.language  %></li>
+          <% if repo.fork %>
+            <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
+          <% end %>
+      </div>
+    </div>
   <% end %>
+</div>
 </ul>
