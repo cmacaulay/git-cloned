@@ -68,11 +68,11 @@ label {
 
 .tab_container [id^="tab"]:checked + label {
   background: $white;
-  box-shadow: inset 0 3px $light-blue;
+  box-shadow: inset 0 3px $deep-magenta;
 }
 
 .tab_container [id^="tab"]:checked + label .fa {
-  color: $light-blue;
+  color: $deep-magenta;
 }
 
 label .fa {
@@ -117,7 +117,23 @@ label .fa {
     padding: 24px;
     margin: 0.5rem 0 1rem 0;
     border-radius: 2px;
-    background-color: $taupe;
+    background-color: $white;
     height: 175px;
     width: 260px;
+}
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: $light-blue;
+}
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid $light-blue;
+}
+
+.card-panel.followers {
+    transition: box-shadow .25s;
+    padding: 24px;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 2px;
+    background-color: #FFFEFF;
+	  height: 240px;
+	  width: 275px;
 }
