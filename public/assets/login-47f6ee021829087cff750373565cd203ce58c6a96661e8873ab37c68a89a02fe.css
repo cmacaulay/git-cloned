@@ -1,0 +1,500 @@
+/* line 1, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  appearance: none;
+  background-color: #1565c0;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 22, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #11519a;
+  color: #fff;
+}
+/* line 28, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 32, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: #1565c0;
+}
+
+/* line 38, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+.forfeit {
+  appearance: none;
+  border: 2px solid #FF4769;
+  border-radius: 3px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 57, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+.forfeit:hover, .forfeit:focus {
+  background-color: #b3324a;
+  border-color: #b3324a;
+  color: #fff;
+}
+/* line 64, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+.forfeit:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 68, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+.forfeit:disabled:hover {
+  background-color: #1565c0;
+}
+
+/* line 75, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_buttons.scss */
+.buttons {
+  padding-left: 20px;
+}
+
+/* line 1, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+}
+
+/* line 20, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+input,
+select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+}
+
+/* line 27, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+/* line 41, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+select[multiple]:hover {
+  border-color: #b1b1b1;
+}
+/* line 45, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+select[multiple]:focus {
+  border-color: #1565c0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
+  outline: none;
+}
+/* line 51, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+select[multiple]:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+/* line 55, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+select[multiple]:disabled:hover {
+  border: 1px solid #ddd;
+}
+
+/* line 61, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 65, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+[type="search"] {
+  appearance: none;
+}
+
+/* line 69, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
+/* line 75, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 80, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em;
+}
+/* line 11, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_lists.scss */
+dl dt {
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+/* line 16, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_lists.scss */
+dl dd {
+  margin: 0;
+}
+
+/* line 1, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0;
+}
+
+/* line 20, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+body {
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 20, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+}
+
+/* line 24, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+a {
+  color: #1565c0;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+/* line 29, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #104c90;
+}
+
+/* line 36, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 44, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 10, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/basics.scss */
+body {
+  background-color: #575557;
+}
+
+/* line 14, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/basics.scss */
+img {
+  max-width: 25%;
+}
+
+/* line 3, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer {
+  width: 100%;
+}
+/* line 16, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* line 22, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer ul {
+  flex-basis: 7em;
+  flex-shrink: 0;
+  margin-bottom: 1.5em;
+  padding: 0;
+}
+/* line 29, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer li {
+  line-height: 1.5em;
+  list-style: none;
+  text-align: center;
+}
+/* line 35, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer li a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+/* line 39, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer li a:focus, .footer li a:hover {
+  color: white;
+}
+/* line 45, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.footer li h3 {
+  color: #FFFEFF;
+  font-size: 12px;
+  margin-bottom: 0.4em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* line 54, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+* {
+  margin: 0;
+}
+
+/* line 57, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 60, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px;
+  background-color: #575557;
+}
+
+/* line 66, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+/* line 70, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/_login_footer.scss */
+.site-footer, .page-wrap:after {
+  height: 50px;
+}
+
+/* line 7, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.auth-now {
+  text-align: center;
+  padding-bottom: 150px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+/* line 11, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.auth-now h1 {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  color: #FFFEFF;
+  padding-top: 10px;
+}
+/* line 18, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.auth-now .container {
+  background-color: #ecf5fa;
+  text-align: center;
+  width: 250px;
+  height: 100px;
+}
+
+/* line 26, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.login {
+  height: 10%;
+  width: 10%;
+  padding-top: 40px;
+  margin-bottom: 25px;
+}
+
+/* line 35, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.buttons {
+  padding-left: 20px;
+}
+
+/* ** !!GENERAL ** */
+/* line 44, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card {
+  display: block;
+  box-sizing: border-box;
+}
+
+/* ** !!CARD ** */
+/* line 59, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  height: 110px;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  background: #7e7b7e;
+  box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+/* line 72, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* ** !!CARD CENTER MODIFIER ** */
+/* line 81, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card--center {
+  text-align: center;
+}
+/* line 83, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card--center a {
+  appearance: none;
+  background-color: #3494cd;
+  border: 0;
+  border-radius: 3px;
+  color: #FFFEFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 104, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card--center a:hover, .c-card--center a:focus {
+  background-color: #1f597c;
+  color: #fff;
+}
+/* line 110, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card--center a:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 114, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.c-card--center a:disabled:hover {
+  background-color: #1565c0;
+}
+
+/* line 121, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.forfeit {
+  appearance: none;
+  border: 2px solid #FF4769;
+  border-radius: 3px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 140, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.forfeit:hover, .forfeit:focus {
+  background-color: #b3324a;
+  border-color: #b3324a;
+  color: #fff;
+}
+/* line 147, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.forfeit:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 151, /Users/caseymacaulay/Projects/Turing/3module/projects/api-curious/git-cloned/app/assets/stylesheets/login.scss */
+.forfeit:disabled:hover {
+  background-color: #1565c0;
+}

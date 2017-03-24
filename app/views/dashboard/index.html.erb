@@ -2,28 +2,85 @@
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <%= image_tag "Octocat/Octocat.png", class: "brand"%>
+      <div class="container">
+        <%= image_tag "Octocat/Octocat.png", class: "brand"%>
+      </div>
     </div>
   </nav>
 </div>
 <div class="container">
 
-    <section class="dashboard">
-    <h1>Welcome <%= current_user[:username] %> </h1>
-    <%= image_tag current_user.avatar, class: "user-avatar" %>
-    <hr>
-    <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
-    <hr>
-    <%= render partial: 'followers' %>
-    <hr>
-    <%= render partial: 'following' %>
-    <hr>
-    <%= render partial: 'orgs' %>
-    <hr>
-    <%= render partial: 'repos' %>
-    <hr>
-    <%= render partial: 'commits' %>
-    <hr>
-    <%= render partial: 'follower_commits' %>
-  </section>
-  <%= javascript_include_tag "dashboard" %>
+		<div class="tab_container">
+			<input id="tab1" type="radio" name="tabs" checked>
+			<label for="tab1"><i class="fa fa-code"></i><span>Home</span></label>
+
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><i class="fa fa-star" aria-hidden="true"></i></i><span>Stars (<%= current_user.starred_repos.count %>)</span></label>
+
+			<input id="tab3" type="radio" name="tabs">
+			<label for="tab3"></i><span>Followers (<%= current_user.followers.count %>)</span></label>
+
+			<input id="tab4" type="radio" name="tabs">
+			<label for="tab4"></i><span>Following (<%= current_user.following.count %>)</span></label>
+
+			<input id="tab5" type="radio" name="tabs">
+			<label for="tab5"></label>
+
+			<section id="content1" class="tab-content">
+        <h1><%= current_user.name %></h1>
+        <h2><%= current_user[:username] %> </h2>
+        <%= image_tag current_user.avatar, class: "user-avatar" %>
+        <%= render partial: 'repos' %>
+        <p>Organizations: </p>
+        <% unless current_user.organizations.empty? %>
+          <% byebug %>
+        <%= render partial: 'orgs' %>
+        <% end %>
+        <%= render partial: 'commits' %>
+			</section>
+
+			<section id="content2" class="tab-content">
+        <h1>Starred Repos</h1>
+        <ul>
+          <% current_user.starred_repos.each do |repo| %>
+            <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
+            <li><%= repo.description  %></li>
+            <li><%= repo.language  %></li>
+            <% if repo.fork %>
+              <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
+            <% end %>
+          <% end %>
+        </ul>
+			</section>
+
+      <section id="content3" class="tab-content">
+        <%= render partial: 'followers' %>
+
+      </section>
+
+      <section id="content4" class="tab-content">
+        <%= render partial: 'following' %>
+        <%= render partial: 'following_commits' %>
+      </section>
+
+			<section id="content5" class="tab-content">
+
+		</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="site-footer footer-links">
+    <ul>
+      <li><h3>Terms</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Privacy</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Security</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Contact GitCloned</h3></li>
+    </ul>
+  </div>
+</footer>
+<%= javascript_include_tag "dashboard" %>

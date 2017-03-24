@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def starred_repos
-    Repo.find_starred(self)
+    RepoDetail.find_details(self, Repo.find_starred(self))
   end
 
   def repo_details
