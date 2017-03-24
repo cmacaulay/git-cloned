@@ -1,0 +1,11 @@
+<p>Followers: </p>
+<ul>
+<% current_user.follower_details.each do |follower| %>
+  <li><%= image_tag follower.avatar_url, class: "user-avatar" %></li>
+  <li><%= link_to follower.login, follower.html_url, class: "user-link" %></li>
+  <li><%= link_to follower.name, follower.html_url, class: "user-link" %></li>
+  <li><%= follower.bio %></li>
+  <li><%= follower.location %></li>
+  <li><%= follower.company %></li>
+<% end %>
+</ul>

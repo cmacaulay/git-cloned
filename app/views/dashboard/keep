@@ -1,0 +1,21 @@
+
+
+      <section class="dashboard">
+      <h1>Welcome <%= current_user[:username] %> </h1>
+      <%= image_tag current_user.avatar, class: "user-avatar" %>
+      <hr>
+      <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
+      <hr>
+      <%= render partial: 'followers' %>
+      <hr>
+      <%= render partial: 'following' %>
+      <hr>
+      <%= render partial: 'orgs' %>
+      <hr>
+      <%= render partial: 'repos' %>
+      <hr>
+      <%= render partial: 'commits' %>
+      <hr>
+      <%= render partial: 'follower_commits' %>
+    </section>
+    <%= javascript_include_tag "dashboard" %>

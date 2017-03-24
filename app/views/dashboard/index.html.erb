@@ -1,84 +1,86 @@
-<section class="dashboard">
-  <h1>Welcome <%= current_user.username %> </h1>
-  <%= image_tag current_user.avatar, class: "user-avatar" %>
-  <hr>
-  <p>Number of starred repos: <%= current_user.starred_repos.count %></p>
-  <hr>
+</div>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <div class="container">
+        <%= image_tag "Octocat/Octocat.png", class: "brand"%>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
 
-  <p>Followers: </p>
-  <ul>
-  <% current_user.follower_details.each do |follower| %>
-    <li><%= image_tag follower.avatar_url, class: "user-avatar" %></li>
-    <li><%= link_to follower.login, follower.html_url, class: "user-link" %></li>
-    <li><%= link_to follower.name, follower.html_url, class: "user-link" %></li>
-    <li><%= follower.bio %></li>
-    <li><%= follower.location %></li>
-    <li><%= follower.company %></li>
-  <% end %>
-</ul>
-<hr>
+		<div class="tab_container">
+			<input id="tab1" type="radio" name="tabs" checked>
+			<label for="tab1"><i class="fa fa-code"></i><span>Home</span></label>
 
-<p>Following:</p>
-<ul>
-<% current_user.following_details.each do |follower| %>
-  <li><%= image_tag follower.avatar_url, class: "user-avatar" %></li>
-  <li><%= link_to follower.login, follower.html_url, class: "user-link" %></li>
-  <li><%= link_to follower.name, follower.html_url, class: "user-link" %></li>
-  <li><%= follower.bio %></li>
-  <li><%= follower.location %></li>
-  <li><%= follower.company %></li>
-<% end %>
+			<input id="tab2" type="radio" name="tabs">
+			<label for="tab2"><i class="fa fa-star" aria-hidden="true"></i></i><span>Stars (<%= current_user.starred_repos.count %>)</span></label>
 
-</ul>
-<hr>
+			<input id="tab3" type="radio" name="tabs">
+			<label for="tab3"></i><span>Followers (<%= current_user.followers.count %>)</span></label>
 
-  <p>Organizations: </p>
-  <ul>
-    <% current_user.organizations.each do |org| %>
-      <li><%= org.login %><li>
-    <% end %>
-  </ul>
-  <hr>
+			<input id="tab4" type="radio" name="tabs">
+			<label for="tab4"></i><span>Following (<%= current_user.following.count %>)</span></label>
 
-  <p>Repos: </p>
-  <ul>
-    <% current_user.repo_details.each do |repo| %>
-      <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
-      <li><%= repo.description  %></li>
-      <li><%= repo.language  %></li>
-      <% if repo.fork %>
-        <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-<hr>
-<p>Commits:</p>
-<ul>
-  <% current_user.commits_by_repo.each do |repo| %>
-    <% if repo.keys.first %>
-    <li>Repo: <%= repo.keys.first %></li>
-    <% end %>
+			<input id="tab5" type="radio" name="tabs">
+			<label for="tab5"></label>
+
+			<section id="content1" class="tab-content">
+        <h1><%= current_user.name %></h1>
+        <h2><%= current_user[:username] %> </h2>
+        <%= image_tag current_user.avatar, class: "user-avatar" %>
+        <%= render partial: 'repos' %>
+        <p>Organizations: </p>
+        <% unless current_user.organizations.empty? %>
+          <% byebug %>
+        <%= render partial: 'orgs' %>
+        <% end %>
+        <%= render partial: 'commits' %>
+			</section>
+
+			<section id="content2" class="tab-content">
+        <h1>Starred Repos</h1>
+        <ul>
+          <% current_user.starred_repos.each do |repo| %>
+            <li><%= link_to repo.name, repo.html_url, class: "repo" %></li>
+            <li><%= repo.description  %></li>
+            <li><%= repo.language  %></li>
+            <% if repo.fork %>
+              <li>forked from <%= link_to repo.parent[:full_name], repo.parent[:html_url], class: "fork" %></li>
+            <% end %>
+          <% end %>
+        </ul>
+			</section>
+
+      <section id="content3" class="tab-content">
+        <%= render partial: 'followers' %>
+
+      </section>
+
+      <section id="content4" class="tab-content">
+        <%= render partial: 'following' %>
+        <%= render partial: 'following_commits' %>
+      </section>
+
+			<section id="content5" class="tab-content">
+
+		</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="site-footer footer-links">
     <ul>
-    <% repo.values.each do |commit| %>
-      <li>Author: <%= commit[:author][:name] %></li>
-      <li>Message: <%= commit[:message] %></li>
-    <% end %>
+      <li><h3>Terms</h3></li>
     </ul>
-  <% end %>
-</ul>
-<hr>
-  <p>Commits of followed users: </p>
-  <ul>
-    <% current_user.commits_by_repo_of_followed.each do |repo| %>
-      <% if repo.keys.first %>
-      <li>Repo: <%= repo.keys.first %></li>
-      <% end %>
-      <ul>
-      <% repo.values.each do |commit| %>
-        <li>Author: <%= commit[:author][:name] %></li>
-        <li>Message: <%= commit[:message] %></li>
-      <% end %>
-      </ul>
-    <% end %>
-  </ul>
-</section>
+    <ul>
+      <li><h3>Privacy</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Security</h3></li>
+    </ul>
+    <ul>
+      <li><h3>Contact GitCloned</h3></li>
+    </ul>
+  </div>
+</footer>
+<%= javascript_include_tag "dashboard" %>
