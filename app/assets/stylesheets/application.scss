@@ -1,11 +1,13 @@
 /* Bourbon */
 
+@import "materialize";
 @import "bourbon";
 @import "base/base";
-@import  "neat";
+@import  "neat/neat";
 
 /* CSS Styling */
 @import "basics";
 @import "login";
 @import "login_footer";
 @import "user_dashboard";
+@import "nav";

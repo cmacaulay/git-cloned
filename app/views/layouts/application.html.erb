@@ -3,7 +3,7 @@
   <head>
     <title>GitCloned</title>
     <%= csrf_meta_tags %>
-
+  
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -12,5 +12,7 @@
     <div class="container" id="wrapper">
       <%= yield %>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
