@@ -11,7 +11,7 @@ describe GithubService do
 
   describe '#starred_repos' do
     it 'finds all starred repos' do
-      VCR.use_cassette("#starred_repos") do
+      VCR.use_cassette("#user_starred_repos") do
         starred_repos = user.starred_repos
         starred_repo  = starred_repos.first
 
